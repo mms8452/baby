@@ -1,0 +1,28 @@
+[package]
+name = "baby-growth-tracker"
+version = "1.0.0"
+description = "宝宝成长记录工具"
+authors = ["MiniMax Agent"]
+license = ""
+repository = ""
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0", features = ["devtools"] }
+tauri-plugin-dialog = "2.0"
+tauri-plugin-fs = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rusqlite = { version = "0.30", features = ["bundled"] }
+image = "0.24"
+chrono = "0.4"
+walkdir = "2.4"
+rayon = "1.8"
+md5 = "0.7"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
